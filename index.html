@@ -1093,6 +1093,7 @@
         }
 
         const base = {
+<<<<<<< HEAD
             Valles: { id: "Valles", nombre: "VALLES ESPORTIU", pt: 27, pj: 7, pg: 8, pe: 3, pp: 2, gf: 36, gc: 24 },
             SantCugat: { id: "SantCugat", nombre: "HC SANT CUGAT", pt: 21, pj: 7, pg: 5, pe: 6, pp: 2, gf: 31, gc: 30 },
             Carpesa: { id: "Carpesa", nombre: "CH CARPESA", pt: 21, pj: 7, pg: 6, pe: 3, pp: 4, gf: 28, gc: 22 },
@@ -1101,6 +1102,16 @@
             Castelldefels: { id: "Castelldefels", nombre: "CASTELLDEFELS HC", pt: 15, pj: 7, pg: 4, pe: 3, pp: 6, gf: 32, gc: 39 },
             Madrid: { id: "Madrid", nombre: "CH MADRID - LAS ROZAS", pt: 11, pj: 7, pg: 3, pe: 2, pp: 8, gf: 25, gc: 42 },
             RealSociedad: { id: "RealSociedad", nombre: "REAL SOCIEDAD 1927", pt: 9, pj: 7, pg: 2, pe: 3, pp: 8, gf: 29, gc: 38 }
+=======
+            Valles: { id: "Valles", nombre: "VALLES ESPORTIU", pt: 27, pj: 6, pg: 8, pe: 3, pp: 1, gf: 35, gc: 22 },
+            SantCugat: { id: "SantCugat", nombre: "HC SANT CUGAT", pt: 21, pj: 6, pg: 5, pe: 6, pp: 1, gf: 30, gc: 26 },
+            Carpesa: { id: "Carpesa", nombre: "CH CARPESA", pt: 18, pj: 6, pg: 5, pe: 3, pp: 4, gf: 26, gc: 21 },
+            Pedralbes: { id: "Pedralbes", nombre: "PEDRALBES HC", pt: 18, pj: 6, pg: 5, pe: 3, pp: 4, gf: 29, gc: 25 },
+            Egara: { id: "Egara", nombre: "EGARA 1935", pt: 15, pj: 6, pg: 4, pe: 3, pp: 5, gf: 27, gc: 25 },
+            Castelldefels: { id: "Castelldefels", nombre: "CASTELLDEFELS HC", pt: 14, pj: 6, pg: 4, pe: 2, pp: 6, gf: 29, gc: 36 },
+            Madrid: { id: "Madrid", nombre: "CH MADRID - LAS ROZAS", pt: 11, pj: 6, pg: 3, pe: 2, pp: 7, gf: 25, gc: 37 },
+            RealSociedad: { id: "RealSociedad", nombre: "REAL SOCIEDAD 1927", pt: 8, pj: 6, pg: 2, pe: 2, pp: 8, gf: 26, gc: 35 }
+>>>>>>> 9ea82620844b8e121d7914cd4ae026d4956f700a
         };
 
         const jornadas = [
@@ -1198,10 +1209,17 @@
                 titulo: "JORNADA 7",
                 fecha: "09-05-2026",
                 partidos: [
+<<<<<<< HEAD
                     { eq1: "Egara", eq2: "SantCugat", score: "4 - 1", date: "09/05/2026", time: "Fin", lugar: "CLUB EGARA - C1" },
                     { eq1: "Carpesa", eq2: "Valles", score: "2 - 1", date: "09/05/2026", time: "Fin", lugar: "POLIDEPORTIVO VIRGEN DEL CARMEN BETERÓ" },
                     { eq1: "Castelldefels", eq2: "RealSociedad", score: "3 - 3", date: "09/05/2026", time: "Fin", lugar: "CAMP MUNICIPAL VIA FERREA" },
                     { eq1: "Pedralbes", eq2: "Madrid", score: "5 - 0", date: "09/05/2026", time: "Fin", lugar: "RC POLO - CAMPO EDUARDO DUALDE" }
+=======
+                    { eq1: "Egara", eq2: "SantCugat", time: "17:00", date: "09/05/2026", lugar: "CLUB EGARA - C1" },
+                    { eq1: "Carpesa", eq2: "Valles", time: "16:00", date: "09/05/2026", lugar: "POLIDEPORTIVO VIRGEN DEL CARMEN BETERÓ" },
+                    { eq1: "Castelldefels", eq2: "RealSociedad", time: "15:00", date: "09/05/2026", lugar: "CAMP MUNICIPAL VIA FERREA" },
+                    { eq1: "Pedralbes", eq2: "Madrid", time: "17:00", date: "09/05/2026", lugar: "RC POLO - CAMPO EDUARDO DUALDE" }
+>>>>>>> 9ea82620844b8e121d7914cd4ae026d4956f700a
                 ]
             },
             {
@@ -1243,7 +1261,11 @@
 
             jornadas.forEach((j, jIndex) => {
                 if (jIndex === 0) return; // Siempre ocultar 1ª Fase del listado principal
+<<<<<<< HEAD
                 if (!showHistorial && jIndex < 8) return; // Ocultar Jornadas 1-7 si no hay historial
+=======
+                if (!showHistorial && jIndex < 7) return; // Ocultar Jornadas 1-6 si no hay historial
+>>>>>>> 9ea82620844b8e121d7914cd4ae026d4956f700a
 
                 const headerTr = document.createElement('tr');
                 headerTr.innerHTML = `
