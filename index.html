@@ -991,6 +991,7 @@
                         <tr>
                             <th>Pos</th>
                             <th style="text-align: left;">Equipo</th>
+                            <th>Forma</th>
                             <th>PT</th>
                             <th>PJ</th>
                             <th>PG</th>
@@ -1128,18 +1129,16 @@
             return escudos[teamId] ? escudos[teamId] : '';
         }
 
-        // ── DATOS BASE: acumulado tras Jornada 7 ──────────────────────
-        // Resultados J7: Castelldefels 3-3 RealSociedad | Carpesa 2-1 Valles
-        //                Egara 4-1 SantCugat             | Pedralbes 5-0 Madrid
+        // ── DATOS BASE: Acumulado real tras Jornada 7 (incluye 1ª Fase) ──
         const base = {
-            Valles: { id: "Valles", nombre: "VALLES ESPORTIU", pt: 27, pj: 7, pg: 8, pe: 3, pp: 3, gf: 37, gc: 26 },
-            SantCugat: { id: "SantCugat", nombre: "HC SANT CUGAT", pt: 21, pj: 7, pg: 5, pe: 6, pp: 3, gf: 32, gc: 34 },
-            Carpesa: { id: "Carpesa", nombre: "CH CARPESA", pt: 21, pj: 7, pg: 6, pe: 3, pp: 4, gf: 28, gc: 22 },
-            Pedralbes: { id: "Pedralbes", nombre: "PEDRALBES HC", pt: 21, pj: 7, pg: 6, pe: 3, pp: 4, gf: 34, gc: 25 },
-            Egara: { id: "Egara", nombre: "EGARA 1935", pt: 21, pj: 7, pg: 6, pe: 3, pp: 5, gf: 35, gc: 27 },
-            Castelldefels: { id: "Castelldefels", nombre: "CASTELLDEFELS HC", pt: 16, pj: 7, pg: 4, pe: 4, pp: 6, gf: 35, gc: 42 },
-            Madrid: { id: "Madrid", nombre: "CH MADRID - LAS ROZAS", pt: 11, pj: 7, pg: 3, pe: 2, pp: 9, gf: 25, gc: 47 },
-            RealSociedad: { id: "RealSociedad", nombre: "REAL SOCIEDAD 1927", pt: 10, pj: 7, pg: 2, pe: 4, pp: 8, gf: 32, gc: 41 }
+            Valles:        { id: "Valles",        nombre: "VALLES ESPORTIU",         pt: 27, pj: 13, pg: 8, pe: 3, pp: 2, gf: 36, gc: 24 },
+            SantCugat:     { id: "SantCugat",     nombre: "HC SANT CUGAT",          pt: 21, pj: 13, pg: 5, pe: 6, pp: 2, gf: 31, gc: 30 },
+            Pedralbes:     { id: "Pedralbes",     nombre: "PEDRALBES HC",           pt: 21, pj: 13, pg: 6, pe: 3, pp: 4, gf: 34, gc: 25 },
+            Carpesa:       { id: "Carpesa",       nombre: "CH CARPESA",             pt: 21, pj: 13, pg: 6, pe: 3, pp: 4, gf: 28, gc: 22 },
+            Egara:         { id: "Egara",         nombre: "EGARA 1935",             pt: 18, pj: 13, pg: 5, pe: 3, pp: 5, gf: 31, gc: 26 },
+            Castelldefels: { id: "Castelldefels", nombre: "CASTELLDEFELS HC",       pt: 15, pj: 13, pg: 4, pe: 3, pp: 6, gf: 32, gc: 39 },
+            Madrid:        { id: "Madrid",        nombre: "CH MADRID - LAS ROZAS",  pt: 11, pj: 13, pg: 3, pe: 2, pp: 8, gf: 25, gc: 42 },
+            RealSociedad:  { id: "RealSociedad",  nombre: "REAL SOCIEDAD 1927",     pt: 9,  pj: 13, pg: 2, pe: 3, pp: 8, gf: 29, gc: 38 }
         };
 
         const jornadas = [
@@ -1428,40 +1427,38 @@
             calcular();
         }
 
-        function getHeadToHeadWinner(aId, bId) {
-            let ptsA = 0, ptsB = 0;
+        function getDetailedH2H(aId, bId) {
+            let res = { ptsA: 0, ptsB: 0, gfA: 0, gfB: 0, difA: 0, difB: 0 };
             jornadas.forEach((j, jIndex) => {
                 j.partidos.forEach((p, pIndex) => {
                     if ((p.eq1 === aId && p.eq2 === bId) || (p.eq1 === bId && p.eq2 === aId)) {
-                        let res = null;
+                        let scoreA = 0, scoreB = 0, hasResult = false;
                         if (p.score) {
-                            const parts = p.score.split('-');
-                            const g1 = parseInt(parts[0].trim());
-                            const g2 = parseInt(parts[1].trim());
-                            if (g1 > g2) res = '1';
-                            else if (g1 === g2) res = 'X';
-                            else res = '2';
+                            const parts = p.score.split('-').map(s => parseInt(s.trim()));
+                            if (p.eq1 === aId) { scoreA = parts[0]; scoreB = parts[1]; }
+                            else { scoreB = parts[0]; scoreA = parts[1]; }
+                            hasResult = true;
                         } else {
                             const matchId = `m-${jIndex}-${pIndex}`;
-                            if (state[matchId]) res = state[matchId].res;
-                        }
-                        if (res) {
-                            if (p.eq1 === aId) {
-                                if (res === '1') ptsA += 3;
-                                else if (res === 'X') { ptsA += 1; ptsB += 1; }
-                                else if (res === '2') ptsB += 3;
-                            } else {
-                                if (res === '1') ptsB += 3;
-                                else if (res === 'X') { ptsB += 1; ptsA += 1; }
-                                else if (res === '2') ptsA += 3;
+                            if (state[matchId]) {
+                                const m = state[matchId];
+                                if (p.eq1 === aId) { scoreA = m.g1 || 0; scoreB = m.g2 || 0; }
+                                else { scoreB = m.g1 || 0; scoreA = m.g2 || 0; }
+                                hasResult = true;
                             }
+                        }
+                        if (hasResult) {
+                            res.gfA += scoreA; res.gfB += scoreB;
+                            if (scoreA > scoreB) res.ptsA += 3;
+                            else if (scoreA < scoreB) res.ptsB += 3;
+                            else { res.ptsA += 1; res.ptsB += 1; }
                         }
                     }
                 });
             });
-            if (ptsA > ptsB) return -1;
-            if (ptsA < ptsB) return 1;
-            return 0;
+            res.difA = res.gfA - res.gfB;
+            res.difB = res.gfB - res.gfA;
+            return res;
         }
 
         function calcular() {
@@ -1489,27 +1486,24 @@
                 stats[eq2].gf += addG2; stats[eq1].gc += addG2;
             });
 
-            const groupsByPt = {};
-            Object.values(stats).forEach(eq => {
-                if (!groupsByPt[eq.pt]) groupsByPt[eq.pt] = [];
-                groupsByPt[eq.pt].push(eq);
-            });
-
-            const sortedPoints = Object.keys(groupsByPt).map(Number).sort((a, b) => b - a);
-            let ranking = [];
-
-            sortedPoints.forEach(pt => {
-                let group = groupsByPt[pt];
-                if (group.length === 2) {
-                    group.sort((a, b) => {
-                        const h2h = getHeadToHeadWinner(a.id, b.id);
-                        if (h2h !== 0) return h2h;
-                        return (b.gf - b.gc) - (a.gf - a.gc);
-                    });
-                } else if (group.length > 2) {
-                    group.sort((a, b) => (b.gf - b.gc) - (a.gf - a.gc));
-                }
-                ranking = ranking.concat(group);
+            let ranking = Object.values(stats).sort((a, b) => {
+                // 0. Puntos
+                if (b.pt !== a.pt) return b.pt - a.pt;
+                // 1. Partidos ganados en toda la competición
+                if (b.pg !== a.pg) return b.pg - a.pg;
+                // 2. Diferencia de goles en toda la competición
+                const difA = a.gf - a.gc;
+                const difB = b.gf - b.gc;
+                if (difB !== difA) return difB - difA;
+                // 3. Goles a favor en toda la competición
+                if (b.gf !== a.gf) return b.gf - a.gf;
+                // 4, 5, 6. Enfrentamiento directo
+                const h2h = getDetailedH2H(a.id, b.id);
+                if (h2h.ptsB !== h2h.ptsA) return h2h.ptsB - h2h.ptsA;
+                if (h2h.difB !== h2h.difA) return h2h.difB - h2h.difA;
+                if (h2h.gfB !== h2h.gfA) return h2h.gfB - h2h.gfA;
+                // 7. Shoot-out (Estable por ID si no hay más remedio)
+                return a.id.localeCompare(b.id);
             });
 
             updateFinal4FromRanking(ranking);
@@ -1518,30 +1512,48 @@
             tableBody.innerHTML = "";
             ranking.forEach((eq, i) => {
                 const isPos4 = i < 4 ? 'pos-top4' : '';
-                const totalMatches = eq.pg + eq.pe + eq.pp;
-                const pgPct = totalMatches ? Math.round(eq.pg / totalMatches * 100) : 0;
-                const pePct = totalMatches ? Math.round(eq.pe / totalMatches * 100) : 0;
-                const ppPct = totalMatches ? Math.round(eq.pp / totalMatches * 100) : 0;
+                const totalMatches = eq.pj;
+                
+                // Puntos de forma (últimos 5 resultados) - Basado en la imagen
+                const formMap = {
+                    Valles:        ['G','G','G','E','P'],
+                    SantCugat:     ['E','E','G','E','P'],
+                    Pedralbes:     ['G','G','P','E','G'],
+                    Carpesa:       ['P','E','G','P','G'],
+                    Egara:         ['E','P','G','P','G'],
+                    Castelldefels: ['G','G','P','E','E'],
+                    Madrid:        ['P','P','P','G','P'],
+                    RealSociedad:  ['P','P','P','G','E']
+                };
+                
+                const formHtml = (formMap[eq.id] || []).map(res => {
+                    let color = '#10b981'; // G (Verde)
+                    if (res === 'E') color = '#f59e0b'; // E (Naranja)
+                    if (res === 'P') color = '#ef4444'; // P (Rojo)
+                    return `<span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:${color};color:white;font-size:10px;font-weight:700;margin:0 2px;">${res}</span>`;
+                }).join('');
+
                 const gfRat = totalMatches ? (eq.gf / totalMatches) : 0;
                 const gcRat = totalMatches ? (eq.gc / totalMatches) : 0;
-                const formatRatio = (r) => (r % 1 === 0 ? r : r.toFixed(1)) + ' gol/part.';
+                const formatRatio = (r) => (r % 1 === 0 ? r : r.toFixed(2)) + ' gol/part.';
 
                 tableBody.innerHTML += `<tr class="${isPos4}">
-                <td style="font-weight:600; color:${i < 4 ? '#10b981' : '#555'}">${i + 1}</td>
+                <td style="font-weight:600; color:#555; padding: 16px 10px;">${i + 1}</td>
                 <td>
                     <div class="team-clasif-cell">
-                        <img src="${getLogoSrc(eq.id)}" style="width:24px; height:24px; object-fit:contain; border-radius:4px;" onerror="this.style.display='none'">
-                        ${eq.nombre}
+                        <img src="${getLogoSrc(eq.id)}" style="width:32px;height:32px;object-fit:contain;border-radius:4px;background:white;padding:2px;box-shadow:0 1px 2px rgba(0,0,0,0.1);" onerror="this.style.display='none'">
+                        <span style="font-size:12px;font-weight:600;text-transform:uppercase;color:#222;cursor:pointer;" onclick="showTeamMatches('${eq.id}')">${eq.nombre}</span>
                     </div>
                 </td>
-                <td><span style="font-size:12px; font-weight:700; color:#333; background: #fff; border: 1px solid #ddd; padding: 4px 16px; border-radius: 14px; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">${eq.pt}</span></td>
-                <td style="cursor:pointer;" onclick="showTeamMatches('${eq.id}')">${totalMatches}<span style="font-size:10px; color:#aaa; margin-left:4px; vertical-align:top;">🔍</span></td>
-                <td>${eq.pg}<div style="font-size:9px; color:#888;">${pgPct}%</div></td>
-                <td>${eq.pe}<div style="font-size:9px; color:#888;">${pePct}%</div></td>
-                <td>${eq.pp}<div style="font-size:9px; color:#888;">${ppPct}%</div></td>
+                <td style="text-align:center;"><div style="display:flex;justify-content:center;align-items:center;gap:2px;">${formHtml}</div></td>
+                <td><div style="display:inline-flex;align-items:center;justify-content:center;background:#fff;border:1px solid #e2e8f0;width:40px;height:40px;border-radius:50%;font-weight:700;font-size:14px;box-shadow:0 2px 4px rgba(0,0,0,0.04);">${eq.pt}</div></td>
+                <td style="font-weight:600;color:#333;">7 <span style="font-size:10px;color:#aaa;font-weight:400;display:block;">(${totalMatches} total)</span></td>
+                <td style="font-weight:600;">${eq.pg}<div style="font-size:9px; color:#888; font-weight:400;">${Math.round(eq.pg/totalMatches*100)}%</div></td>
+                <td style="font-weight:600;">${eq.pe}<div style="font-size:9px; color:#888; font-weight:400;">${Math.round(eq.pe/totalMatches*100)}%</div></td>
+                <td style="font-weight:600;">${eq.pp}<div style="font-size:9px; color:#888; font-weight:400;">${Math.round(eq.pp/totalMatches*100)}%</div></td>
                 <td style="font-weight:600;">${eq.gf}<div style="font-size:9px; color:#888; font-weight:400;">${formatRatio(gfRat)}</div></td>
                 <td style="font-weight:600;">${eq.gc}<div style="font-size:9px; color:#888; font-weight:400;">${formatRatio(gcRat)}</div></td>
-                <td style="font-weight:600; font-size:13px;">${eq.gf - eq.gc > 0 ? '+' : ''}${eq.gf - eq.gc}</td>
+                <td style="font-weight:700; font-size:13px; color:${eq.gf - eq.gc >= 0 ? '#10b981' : '#ef4444'}">${eq.gf - eq.gc > 0 ? '+' : ''}${eq.gf - eq.gc}</td>
             </tr>`;
             });
         }
