@@ -14,7 +14,6 @@
             --bg-body: #f0f2f5;
             --bg-card: #ffffff;
             --rfeh-red: #880924;
-            /* El rojo oscuro de las cabeceras */
             --rfeh-red-hover: #aa0d2e;
             --text-main: #333333;
             --text-muted: #666666;
@@ -36,7 +35,6 @@
             margin: auto;
         }
 
-        /* Mock Header de la Federación */
         .fed-header {
             background: white;
             padding: 18px 20px;
@@ -52,7 +50,6 @@
             letter-spacing: 0.5px;
         }
 
-        /* Nav y Controles simulados */
         .top-controls {
             background: white;
             padding: 15px 20px;
@@ -77,7 +74,6 @@
             white-space: nowrap;
         }
 
-        /* Menú de pestañas */
         .tabs-menu {
             background: #e8eaed;
             padding: 15px 20px 0;
@@ -104,7 +100,6 @@
             border-bottom: 3px solid var(--rfeh-red);
         }
 
-        /* Main Card */
         .main-card {
             background: var(--bg-card);
             border-radius: 12px;
@@ -157,7 +152,6 @@
             color: white;
         }
 
-        /* Info box */
         .info-box {
             background: #f9fafb;
             border: 1px solid var(--border-color);
@@ -192,7 +186,6 @@
             color: var(--text-muted);
         }
 
-        /* Tabla RFEH */
         .rfeh-table-wrapper {
             border: 1px solid var(--border-color);
             border-radius: 8px;
@@ -230,7 +223,6 @@
             background-color: var(--bg-alt-row);
         }
 
-        /* Columna Equipos */
         .equipos-cell {
             display: flex;
             align-items: center;
@@ -268,7 +260,6 @@
             text-transform: uppercase;
         }
 
-        /* Columna Fecha & Lugar */
         .td-fecha {
             font-weight: 600;
             color: #333;
@@ -291,7 +282,6 @@
             text-overflow: ellipsis;
         }
 
-        /* Estado Pill */
         .estado-pill {
             display: inline-flex;
             align-items: center;
@@ -311,7 +301,6 @@
             height: 6px;
             border-radius: 50%;
             background: #ef4444;
-            /* red dot */
         }
 
         .estado-pill.finalizado::before {
@@ -320,10 +309,8 @@
             height: 6px;
             border-radius: 50%;
             background: #10b981;
-            /* green dot */
         }
 
-        /* Marcador / Simulador Inputs */
         .simulator-controls {
             display: flex;
             gap: 5px;
@@ -358,10 +345,8 @@
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
         }
 
-        /* Clasificación highlight */
         .pos-top4 {
             background-color: rgba(16, 185, 129, 0.05) !important;
-            /* verde clarito */
             border-left: 3px solid #10b981;
         }
 
@@ -373,7 +358,6 @@
             font-weight: 600;
         }
 
-        /* Modal Partidos */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -469,7 +453,6 @@
             background-color: #fafafa;
         }
 
-        /* Nombre con logo dentro del modal */
         .modal-team-cell {
             display: flex;
             align-items: center;
@@ -477,6 +460,7 @@
             white-space: normal;
             min-width: 90px;
         }
+
         .modal-team-cell img {
             width: 22px;
             height: 22px;
@@ -484,8 +468,9 @@
             border-radius: 3px;
             flex-shrink: 0;
             background: white;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
         }
+
         .modal-team-cell span {
             font-size: 11px;
             font-weight: 600;
@@ -493,6 +478,7 @@
             text-transform: uppercase;
             color: #222;
         }
+
         .modal-team-cell span strong {
             color: var(--rfeh-red);
         }
@@ -519,20 +505,23 @@
             background: var(--bg-card);
             border-radius: 12px;
             padding: 24px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             margin-bottom: 30px;
         }
+
         .final4-title {
             font-size: 20px;
             font-weight: 700;
             color: #111;
             margin-bottom: 6px;
         }
+
         .final4-subtitle {
             font-size: 12px;
             color: var(--text-muted);
             margin-bottom: 24px;
         }
+
         .bracket-grid {
             display: grid;
             grid-template-columns: 1fr 60px 1fr 60px 1fr;
@@ -540,12 +529,14 @@
             align-items: center;
             gap: 12px;
         }
+
         .bracket-match {
             background: #f9fafb;
             border: 1px solid var(--border-color);
             border-radius: 10px;
             overflow: hidden;
         }
+
         .bracket-match-header {
             background: var(--rfeh-red);
             color: white;
@@ -555,6 +546,7 @@
             padding: 6px 12px;
             letter-spacing: 0.5px;
         }
+
         .bracket-team {
             display: flex;
             align-items: center;
@@ -563,25 +555,30 @@
             border-bottom: 1px solid var(--border-color);
             transition: background 0.15s;
         }
+
         .bracket-team:last-child {
             border-bottom: none;
         }
+
         .bracket-team.winner {
-            background: rgba(16,185,129,0.08);
+            background: rgba(16, 185, 129, 0.08);
             font-weight: 700;
         }
+
         .bracket-team.loser {
             opacity: 0.45;
         }
+
         .bracket-team img {
             width: 28px;
             height: 28px;
             object-fit: contain;
             border-radius: 4px;
             background: white;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
             flex-shrink: 0;
         }
+
         .bracket-team-name {
             flex: 1;
             font-size: 11px;
@@ -589,17 +586,20 @@
             text-transform: uppercase;
             color: #222;
         }
+
         .bracket-seed {
             font-size: 10px;
             color: #aaa;
             font-weight: 600;
             margin-right: 2px;
         }
+
         .bracket-score-box {
             display: flex;
             align-items: center;
             gap: 4px;
         }
+
         .bracket-score-input {
             width: 30px;
             padding: 4px;
@@ -611,10 +611,12 @@
             background: #fff;
             color: #111;
         }
+
         .bracket-score-input:focus {
             outline: none;
             border-color: var(--rfeh-red);
         }
+
         .bracket-connector {
             display: flex;
             align-items: center;
@@ -622,11 +624,13 @@
             color: #ccc;
             font-size: 22px;
         }
+
         .final-match-wrap {
             grid-column: 3;
             grid-row: 1 / span 2;
             align-self: center;
         }
+
         .third-place-box {
             background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
             border: 1px solid #bae6fd;
@@ -637,6 +641,7 @@
             gap: 14px;
             margin-top: 20px;
         }
+
         .third-place-badge {
             background: #0ea5e9;
             color: white;
@@ -650,27 +655,44 @@
             justify-content: center;
             flex-shrink: 0;
         }
+
         .final-place-podium {
             margin-top: 28px;
         }
+
         .podium-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 14px;
         }
+
         .podium-card {
             border-radius: 10px;
             padding: 16px;
             text-align: center;
             border: 1px solid var(--border-color);
         }
-        .podium-card.gold   { background: linear-gradient(135deg,#fffbeb,#fef3c7); border-color:#fbbf24; }
-        .podium-card.silver { background: linear-gradient(135deg,#f8fafc,#e2e8f0); border-color:#94a3b8; }
-        .podium-card.bronze { background: linear-gradient(135deg,#fff7ed,#ffedd5); border-color:#fb923c; }
+
+        .podium-card.gold {
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+            border-color: #fbbf24;
+        }
+
+        .podium-card.silver {
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            border-color: #94a3b8;
+        }
+
+        .podium-card.bronze {
+            background: linear-gradient(135deg, #fff7ed, #ffedd5);
+            border-color: #fb923c;
+        }
+
         .podium-medal {
             font-size: 28px;
             margin-bottom: 6px;
         }
+
         .podium-pos {
             font-size: 11px;
             font-weight: 700;
@@ -678,12 +700,14 @@
             color: #555;
             margin-bottom: 4px;
         }
+
         .podium-name {
             font-size: 12px;
             font-weight: 700;
             color: #111;
             text-transform: uppercase;
         }
+
         .podium-shield {
             width: 64px;
             height: 64px;
@@ -691,12 +715,11 @@
             display: block;
             margin: 10px auto 8px;
             border-radius: 6px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
             background: white;
             padding: 4px;
         }
 
-        /* Botón ganador en el bracket */
         .btn-winner {
             background: transparent;
             border: 1.5px solid #d1d5db;
@@ -709,14 +732,16 @@
             transition: all 0.2s;
             line-height: 1;
         }
+
         .btn-winner:hover {
             border-color: var(--rfeh-red);
-            background: rgba(136,9,36,0.06);
+            background: rgba(136, 9, 36, 0.06);
         }
+
         .btn-winner.selected {
             background: var(--rfeh-red);
             border-color: var(--rfeh-red);
-            box-shadow: 0 1px 4px rgba(136,9,36,0.3);
+            box-shadow: 0 1px 4px rgba(136, 9, 36, 0.3);
             filter: brightness(1.1);
         }
 
@@ -754,7 +779,6 @@
                 font-size: 14px;
             }
 
-            /* Tabla de partidos: modo card */
             #tabla-partidos thead {
                 display: none;
             }
@@ -816,7 +840,6 @@
                 gap: 10px;
             }
 
-            /* Clasificacion: scroll horizontal */
             #section-clasificacion .rfeh-table-wrapper {
                 overflow-x: auto;
                 -webkit-overflow-scrolling: touch;
@@ -859,7 +882,6 @@
                 padding: 8px 4px;
             }
 
-            /* Modal table mobile: show logo+name stacked */
             .modal-team-cell {
                 flex-direction: column;
                 align-items: center;
@@ -867,32 +889,49 @@
                 min-width: 60px;
                 text-align: center;
             }
+
             .modal-team-cell span {
                 font-size: 9px;
             }
+
             .modal-table td {
                 padding: 8px 4px;
                 font-size: 11px;
             }
+
             .modal-table th {
                 padding: 8px 4px;
                 font-size: 10px;
             }
 
-            /* Final4 mobile: SF1 → SF2 → Final */
             .bracket-grid {
                 display: flex;
                 flex-direction: column;
                 gap: 8px;
             }
-            #f4-sf1        { order: 1; }
-            #f4-sf2        { order: 2; }
-            .final-match-wrap { order: 4; grid-column: 1; grid-row: auto; }
-            /* Connectors: hide on mobile, not needed with stacked layout */
-            .bracket-connector { display: none; }
+
+            #f4-sf1 {
+                order: 1;
+            }
+
+            #f4-sf2 {
+                order: 2;
+            }
+
+            .final-match-wrap {
+                order: 4;
+                grid-column: 1;
+                grid-row: auto;
+            }
+
+            .bracket-connector {
+                display: none;
+            }
+
             .podium-grid {
                 grid-template-columns: 1fr;
             }
+
             .podium-name {
                 font-size: 10px;
             }
@@ -904,13 +943,13 @@
 
     <div class="container">
 
-        <!-- HEADER FEDERACIÓN (MOCK) -->
+        <!-- HEADER FEDERACIÓN -->
         <div class="fed-header">
             <img src="federacion.jpg" style="height: 38px; margin-right: 16px; object-fit: contain;"
                 onerror="this.style.display='none'"> FEDERACIÓN ESPAÑOLA DE HOCKEY
         </div>
 
-        <!-- SECCIÓN RESULTADOS (SIMULADOR) -->
+        <!-- SECCIÓN RESULTADOS -->
         <div id="section-resultados" class="main-card">
             <div class="card-header" style="margin-bottom: 2px;">
                 <div class="card-title">Listado de Partidos</div>
@@ -932,16 +971,13 @@
                             <th>Resultado</th>
                         </tr>
                     </thead>
-                    <tbody id="partidos-body">
-                        <!-- Partidos generados por JS -->
-                    </tbody>
+                    <tbody id="partidos-body"></tbody>
                 </table>
             </div>
 
             <p style="text-align:center; font-size:12px; color:#666;">* Utiliza la columna "Marcador" (1X2 rápido) o la
                 columna "Resultado" (goles exactos) para simular.</p>
         </div>
-
 
         <!-- SECCIÓN CLASIFICACIÓN -->
         <div id="section-clasificacion" class="main-card">
@@ -972,111 +1008,111 @@
 
     </div>
 
-        <!-- SECCIÓN FINAL 4 -->
-        <div id="section-final4" class="final4-section">
-            <div class="final4-title">🏆 Final 4</div>
-            <div class="final4-subtitle">Los 4 primeros clasificados disputan las semifinales. Los ganadores juegan la Final. El 3er puesto es el mejor clasificado entre los perdedores.</div>
+    <!-- SECCIÓN FINAL 4 -->
+    <div id="section-final4" class="final4-section">
+        <div class="final4-title">🏆 Final 4</div>
+        <div class="final4-subtitle">Los 4 primeros clasificados disputan las semifinales. Los ganadores juegan la
+            Final. El 3er puesto es el mejor clasificado entre los perdedores.</div>
 
-            <!-- Bracket -->
-            <div class="bracket-grid" id="f4-bracket">
-                <!-- SF1: 1º vs 4º -->
-                <div id="f4-sf1" class="bracket-match">
-                    <div class="bracket-match-header">Semifinal 1 · 1º vs 4º</div>
-                    <div class="bracket-team" id="f4-sf1-eq1">
-                        <span class="bracket-seed" id="f4-sf1-seed1">1º</span>
-                        <img id="f4-sf1-logo1" src="" onerror="this.style.display='none'">
-                        <span class="bracket-team-name" id="f4-sf1-name1">—</span>
-                        <button class="btn-winner" id="f4-sf1-btn1" onclick="pickWinner('sf1', 1)">✓</button>
-                    </div>
-                    <div class="bracket-team" id="f4-sf1-eq2">
-                        <span class="bracket-seed" id="f4-sf1-seed2">4º</span>
-                        <img id="f4-sf1-logo2" src="" onerror="this.style.display='none'">
-                        <span class="bracket-team-name" id="f4-sf1-name2">—</span>
-                        <button class="btn-winner" id="f4-sf1-btn2" onclick="pickWinner('sf1', 2)">✓</button>
-                    </div>
+        <div class="bracket-grid" id="f4-bracket">
+            <!-- SF1: 1º vs 4º -->
+            <div id="f4-sf1" class="bracket-match">
+                <div class="bracket-match-header">Semifinal 1 · 1º vs 4º</div>
+                <div class="bracket-team" id="f4-sf1-eq1">
+                    <span class="bracket-seed" id="f4-sf1-seed1">1º</span>
+                    <img id="f4-sf1-logo1" src="" onerror="this.style.display='none'">
+                    <span class="bracket-team-name" id="f4-sf1-name1">—</span>
+                    <button class="btn-winner" id="f4-sf1-btn1" onclick="pickWinner('sf1', 1)">✓</button>
                 </div>
-
-                <!-- Conector SF1 → Final -->
-                <div class="bracket-connector">›</div>
-
-                <!-- FINAL (columna central) -->
-                <div class="final-match-wrap">
-                    <div id="f4-final" class="bracket-match">
-                        <div class="bracket-match-header">🏆 FINAL</div>
-                        <div class="bracket-team" id="f4-final-eq1">
-                            <img id="f4-final-logo1" src="" onerror="this.style.display='none'">
-                            <span class="bracket-team-name" id="f4-final-name1">Ganador SF1</span>
-                            <button class="btn-winner" id="f4-final-btn1" onclick="pickWinner('final', 1)">🏆</button>
-                        </div>
-                        <div class="bracket-team" id="f4-final-eq2">
-                            <img id="f4-final-logo2" src="" onerror="this.style.display='none'">
-                            <span class="bracket-team-name" id="f4-final-name2">Ganador SF2</span>
-                            <button class="btn-winner" id="f4-final-btn2" onclick="pickWinner('final', 2)">🏆</button>
-                        </div>
-                    </div>
+                <div class="bracket-team" id="f4-sf1-eq2">
+                    <span class="bracket-seed" id="f4-sf1-seed2">4º</span>
+                    <img id="f4-sf1-logo2" src="" onerror="this.style.display='none'">
+                    <span class="bracket-team-name" id="f4-sf1-name2">—</span>
+                    <button class="btn-winner" id="f4-sf1-btn2" onclick="pickWinner('sf1', 2)">✓</button>
                 </div>
+            </div>
 
-                <!-- Conector SF2 → Final -->
-                <div class="bracket-connector">‹</div>
+            <div class="bracket-connector">›</div>
 
-                <!-- SF2: 2º vs 3º -->
-                <div id="f4-sf2" class="bracket-match">
-                    <div class="bracket-match-header">Semifinal 2 · 2º vs 3º</div>
-                    <div class="bracket-team" id="f4-sf2-eq1">
-                        <span class="bracket-seed" id="f4-sf2-seed1">2º</span>
-                        <img id="f4-sf2-logo1" src="" onerror="this.style.display='none'">
-                        <span class="bracket-team-name" id="f4-sf2-name1">—</span>
-                        <button class="btn-winner" id="f4-sf2-btn1" onclick="pickWinner('sf2', 1)">✓</button>
+            <!-- FINAL (columna central) -->
+            <div class="final-match-wrap">
+                <div id="f4-final" class="bracket-match">
+                    <div class="bracket-match-header">🏆 FINAL</div>
+                    <div class="bracket-team" id="f4-final-eq1">
+                        <img id="f4-final-logo1" src="" onerror="this.style.display='none'">
+                        <span class="bracket-team-name" id="f4-final-name1">Ganador SF1</span>
+                        <button class="btn-winner" id="f4-final-btn1" onclick="pickWinner('final', 1)">🏆</button>
                     </div>
-                    <div class="bracket-team" id="f4-sf2-eq2">
-                        <span class="bracket-seed" id="f4-sf2-seed2">3º</span>
-                        <img id="f4-sf2-logo2" src="" onerror="this.style.display='none'">
-                        <span class="bracket-team-name" id="f4-sf2-name2">—</span>
-                        <button class="btn-winner" id="f4-sf2-btn2" onclick="pickWinner('sf2', 2)">✓</button>
+                    <div class="bracket-team" id="f4-final-eq2">
+                        <img id="f4-final-logo2" src="" onerror="this.style.display='none'">
+                        <span class="bracket-team-name" id="f4-final-name2">Ganador SF2</span>
+                        <button class="btn-winner" id="f4-final-btn2" onclick="pickWinner('final', 2)">🏆</button>
                     </div>
                 </div>
             </div>
 
-            <!-- 3er puesto informativo -->
-            <div class="third-place-box" id="f4-third-box" style="display:none;">
-                <div class="third-place-badge">3</div>
-                <div>
-                    <div style="font-size:11px; color:#0369a1; font-weight:700; text-transform:uppercase; margin-bottom:3px;">3er Puesto (mejor clasificado entre perdedores)</div>
-                    <div style="display:flex; align-items:center; gap:8px;">
-                        <img id="f4-third-logo" src="" style="width:24px;height:24px;object-fit:contain;border-radius:4px;" onerror="this.style.display='none'">
-                        <span id="f4-third-name" style="font-size:13px; font-weight:700; color:#0c4a6e;"></span>
-                    </div>
-                </div>
-            </div>
+            <div class="bracket-connector">‹</div>
 
-            <!-- Podio final -->
-            <div class="final-place-podium" id="f4-podium" style="display:none;">
-                <div style="font-size:14px; font-weight:700; color:#111; margin-bottom:16px;">🏅 Clasificación Final</div>
-                <div class="podium-grid">
-                    <div class="podium-card silver">
-                        <div class="podium-medal">🥈</div>
-                        <div class="podium-pos">2º Clasificado</div>
-                        <img id="pod-2-logo" src="" class="podium-shield" onerror="this.style.display='none'">
-                        <div class="podium-name"><span id="pod-2-name">—</span></div>
-                    </div>
-                    <div class="podium-card gold">
-                        <div class="podium-medal">🥇</div>
-                        <div class="podium-pos">Campeón</div>
-                        <img id="pod-1-logo" src="" class="podium-shield" onerror="this.style.display='none'">
-                        <div class="podium-name"><span id="pod-1-name">—</span></div>
-                    </div>
-                    <div class="podium-card bronze">
-                        <div class="podium-medal">🥉</div>
-                        <div class="podium-pos">3er Clasificado</div>
-                        <img id="pod-3-logo" src="" class="podium-shield" onerror="this.style.display='none'">
-                        <div class="podium-name"><span id="pod-3-name">—</span></div>
-                    </div>
+            <!-- SF2: 2º vs 3º -->
+            <div id="f4-sf2" class="bracket-match">
+                <div class="bracket-match-header">Semifinal 2 · 2º vs 3º</div>
+                <div class="bracket-team" id="f4-sf2-eq1">
+                    <span class="bracket-seed" id="f4-sf2-seed1">2º</span>
+                    <img id="f4-sf2-logo1" src="" onerror="this.style.display='none'">
+                    <span class="bracket-team-name" id="f4-sf2-name1">—</span>
+                    <button class="btn-winner" id="f4-sf2-btn1" onclick="pickWinner('sf2', 1)">✓</button>
+                </div>
+                <div class="bracket-team" id="f4-sf2-eq2">
+                    <span class="bracket-seed" id="f4-sf2-seed2">3º</span>
+                    <img id="f4-sf2-logo2" src="" onerror="this.style.display='none'">
+                    <span class="bracket-team-name" id="f4-sf2-name2">—</span>
+                    <button class="btn-winner" id="f4-sf2-btn2" onclick="pickWinner('sf2', 2)">✓</button>
                 </div>
             </div>
         </div>
 
+        <!-- 3er puesto -->
+        <div class="third-place-box" id="f4-third-box" style="display:none;">
+            <div class="third-place-badge">3</div>
+            <div>
+                <div
+                    style="font-size:11px; color:#0369a1; font-weight:700; text-transform:uppercase; margin-bottom:3px;">
+                    3er Puesto (mejor clasificado entre perdedores)</div>
+                <div style="display:flex; align-items:center; gap:8px;">
+                    <img id="f4-third-logo" src="" style="width:24px;height:24px;object-fit:contain;border-radius:4px;"
+                        onerror="this.style.display='none'">
+                    <span id="f4-third-name" style="font-size:13px; font-weight:700; color:#0c4a6e;"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Podio -->
+        <div class="final-place-podium" id="f4-podium" style="display:none;">
+            <div style="font-size:14px; font-weight:700; color:#111; margin-bottom:16px;">🏅 Clasificación Final</div>
+            <div class="podium-grid">
+                <div class="podium-card silver">
+                    <div class="podium-medal">🥈</div>
+                    <div class="podium-pos">2º Clasificado</div>
+                    <img id="pod-2-logo" src="" class="podium-shield" onerror="this.style.display='none'">
+                    <div class="podium-name"><span id="pod-2-name">—</span></div>
+                </div>
+                <div class="podium-card gold">
+                    <div class="podium-medal">🥇</div>
+                    <div class="podium-pos">Campeón</div>
+                    <img id="pod-1-logo" src="" class="podium-shield" onerror="this.style.display='none'">
+                    <div class="podium-name"><span id="pod-1-name">—</span></div>
+                </div>
+                <div class="podium-card bronze">
+                    <div class="podium-medal">🥉</div>
+                    <div class="podium-pos">3er Clasificado</div>
+                    <img id="pod-3-logo" src="" class="podium-shield" onerror="this.style.display='none'">
+                    <div class="podium-name"><span id="pod-3-name">—</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Configuración de escudos
         const escudos = {
             "SantCugat": "junior.JPG",
             "Pedralbes": "pedralbes.jpg",
@@ -1092,26 +1128,18 @@
             return escudos[teamId] ? escudos[teamId] : '';
         }
 
+        // ── DATOS BASE: acumulado tras Jornada 7 ──────────────────────
+        // Resultados J7: Castelldefels 3-3 RealSociedad | Carpesa 2-1 Valles
+        //                Egara 4-1 SantCugat             | Pedralbes 5-0 Madrid
         const base = {
-<<<<<<< HEAD
-            Valles: { id: "Valles", nombre: "VALLES ESPORTIU", pt: 27, pj: 7, pg: 8, pe: 3, pp: 2, gf: 36, gc: 24 },
-            SantCugat: { id: "SantCugat", nombre: "HC SANT CUGAT", pt: 21, pj: 7, pg: 5, pe: 6, pp: 2, gf: 31, gc: 30 },
+            Valles: { id: "Valles", nombre: "VALLES ESPORTIU", pt: 27, pj: 7, pg: 8, pe: 3, pp: 3, gf: 37, gc: 26 },
+            SantCugat: { id: "SantCugat", nombre: "HC SANT CUGAT", pt: 21, pj: 7, pg: 5, pe: 6, pp: 3, gf: 32, gc: 34 },
             Carpesa: { id: "Carpesa", nombre: "CH CARPESA", pt: 21, pj: 7, pg: 6, pe: 3, pp: 4, gf: 28, gc: 22 },
             Pedralbes: { id: "Pedralbes", nombre: "PEDRALBES HC", pt: 21, pj: 7, pg: 6, pe: 3, pp: 4, gf: 34, gc: 25 },
-            Egara: { id: "Egara", nombre: "EGARA 1935", pt: 18, pj: 7, pg: 5, pe: 3, pp: 5, gf: 31, gc: 26 },
-            Castelldefels: { id: "Castelldefels", nombre: "CASTELLDEFELS HC", pt: 15, pj: 7, pg: 4, pe: 3, pp: 6, gf: 32, gc: 39 },
-            Madrid: { id: "Madrid", nombre: "CH MADRID - LAS ROZAS", pt: 11, pj: 7, pg: 3, pe: 2, pp: 8, gf: 25, gc: 42 },
-            RealSociedad: { id: "RealSociedad", nombre: "REAL SOCIEDAD 1927", pt: 9, pj: 7, pg: 2, pe: 3, pp: 8, gf: 29, gc: 38 }
-=======
-            Valles: { id: "Valles", nombre: "VALLES ESPORTIU", pt: 27, pj: 6, pg: 8, pe: 3, pp: 1, gf: 35, gc: 22 },
-            SantCugat: { id: "SantCugat", nombre: "HC SANT CUGAT", pt: 21, pj: 6, pg: 5, pe: 6, pp: 1, gf: 30, gc: 26 },
-            Carpesa: { id: "Carpesa", nombre: "CH CARPESA", pt: 18, pj: 6, pg: 5, pe: 3, pp: 4, gf: 26, gc: 21 },
-            Pedralbes: { id: "Pedralbes", nombre: "PEDRALBES HC", pt: 18, pj: 6, pg: 5, pe: 3, pp: 4, gf: 29, gc: 25 },
-            Egara: { id: "Egara", nombre: "EGARA 1935", pt: 15, pj: 6, pg: 4, pe: 3, pp: 5, gf: 27, gc: 25 },
-            Castelldefels: { id: "Castelldefels", nombre: "CASTELLDEFELS HC", pt: 14, pj: 6, pg: 4, pe: 2, pp: 6, gf: 29, gc: 36 },
-            Madrid: { id: "Madrid", nombre: "CH MADRID - LAS ROZAS", pt: 11, pj: 6, pg: 3, pe: 2, pp: 7, gf: 25, gc: 37 },
-            RealSociedad: { id: "RealSociedad", nombre: "REAL SOCIEDAD 1927", pt: 8, pj: 6, pg: 2, pe: 2, pp: 8, gf: 26, gc: 35 }
->>>>>>> 9ea82620844b8e121d7914cd4ae026d4956f700a
+            Egara: { id: "Egara", nombre: "EGARA 1935", pt: 21, pj: 7, pg: 6, pe: 3, pp: 5, gf: 35, gc: 27 },
+            Castelldefels: { id: "Castelldefels", nombre: "CASTELLDEFELS HC", pt: 16, pj: 7, pg: 4, pe: 4, pp: 6, gf: 35, gc: 42 },
+            Madrid: { id: "Madrid", nombre: "CH MADRID - LAS ROZAS", pt: 11, pj: 7, pg: 3, pe: 2, pp: 9, gf: 25, gc: 47 },
+            RealSociedad: { id: "RealSociedad", nombre: "REAL SOCIEDAD 1927", pt: 10, pj: 7, pg: 2, pe: 4, pp: 8, gf: 32, gc: 41 }
         };
 
         const jornadas = [
@@ -1209,17 +1237,10 @@
                 titulo: "JORNADA 7",
                 fecha: "09-05-2026",
                 partidos: [
-<<<<<<< HEAD
                     { eq1: "Egara", eq2: "SantCugat", score: "4 - 1", date: "09/05/2026", time: "Fin", lugar: "CLUB EGARA - C1" },
                     { eq1: "Carpesa", eq2: "Valles", score: "2 - 1", date: "09/05/2026", time: "Fin", lugar: "POLIDEPORTIVO VIRGEN DEL CARMEN BETERÓ" },
                     { eq1: "Castelldefels", eq2: "RealSociedad", score: "3 - 3", date: "09/05/2026", time: "Fin", lugar: "CAMP MUNICIPAL VIA FERREA" },
                     { eq1: "Pedralbes", eq2: "Madrid", score: "5 - 0", date: "09/05/2026", time: "Fin", lugar: "RC POLO - CAMPO EDUARDO DUALDE" }
-=======
-                    { eq1: "Egara", eq2: "SantCugat", time: "17:00", date: "09/05/2026", lugar: "CLUB EGARA - C1" },
-                    { eq1: "Carpesa", eq2: "Valles", time: "16:00", date: "09/05/2026", lugar: "POLIDEPORTIVO VIRGEN DEL CARMEN BETERÓ" },
-                    { eq1: "Castelldefels", eq2: "RealSociedad", time: "15:00", date: "09/05/2026", lugar: "CAMP MUNICIPAL VIA FERREA" },
-                    { eq1: "Pedralbes", eq2: "Madrid", time: "17:00", date: "09/05/2026", lugar: "RC POLO - CAMPO EDUARDO DUALDE" }
->>>>>>> 9ea82620844b8e121d7914cd4ae026d4956f700a
                 ]
             },
             {
@@ -1247,10 +1268,8 @@
         function switchMainTab(tab) {
             const tabs = document.querySelectorAll('.tab-item');
             tabs.forEach(t => t.classList.remove('active'));
-
             if (tab === 'resultados') tabs[0].classList.add('active');
             else if (tab === 'clasificacion') tabs[1].classList.add('active');
-
             if (tab === 'clasificacion') document.getElementById('section-clasificacion').scrollIntoView({ behavior: 'smooth' });
             else document.getElementById('section-resultados').scrollIntoView({ behavior: 'smooth' });
         }
@@ -1260,12 +1279,8 @@
             tbody.innerHTML = "";
 
             jornadas.forEach((j, jIndex) => {
-                if (jIndex === 0) return; // Siempre ocultar 1ª Fase del listado principal
-<<<<<<< HEAD
-                if (!showHistorial && jIndex < 8) return; // Ocultar Jornadas 1-7 si no hay historial
-=======
-                if (!showHistorial && jIndex < 7) return; // Ocultar Jornadas 1-6 si no hay historial
->>>>>>> 9ea82620844b8e121d7914cd4ae026d4956f700a
+                if (jIndex === 0) return; // Ocultar siempre 1ª Fase
+                if (!showHistorial && jIndex < 8) return; // Ocultar J1-J7 si no hay historial
 
                 const headerTr = document.createElement('tr');
                 headerTr.innerHTML = `
@@ -1282,14 +1297,9 @@
                     const res = state[matchId] ? state[matchId].res : null;
 
                     const tr = document.createElement('tr');
-
-                    let estadoClass = res ? 'finalizado' : 'pendiente';
-                    let estadoText = res ? 'Finalizado' : 'Pendiente';
-
                     const isMobile = window.innerWidth <= 768;
 
                     if (isMobile) {
-                        // Modo tarjeta para móvil
                         tr.innerHTML = `
                         <td colspan="4" style="padding: 0; border: none;">
                             <div class="match-card">
@@ -1324,10 +1334,8 @@
                             }
                                 </div>
                             </div>
-                        </td>
-                    `;
+                        </td>`;
                     } else {
-                        // Modo tabla para escritorio
                         tr.innerHTML = `
                         <td>
                             <div class="equipos-cell" style="padding-left: 5px;">
@@ -1364,8 +1372,7 @@
                                         </span>
                                    </div>`
                             }
-                        </td>
-                    `;
+                        </td>`;
                     }
                     tbody.appendChild(tr);
                 });
@@ -1378,7 +1385,6 @@
             if (!el1 || !el2) return;
 
             const activeId = document.activeElement ? document.activeElement.id : null;
-
             const val1 = el1.value;
             const val2 = el2.value;
 
@@ -1387,14 +1393,12 @@
             } else {
                 const g1 = val1 !== '' ? parseInt(val1) : undefined;
                 const g2 = val2 !== '' ? parseInt(val2) : undefined;
-
                 let res = (state[matchId] && state[matchId].res) ? state[matchId].res : null;
                 if (g1 !== undefined && g2 !== undefined) {
                     if (g1 > g2) res = '1';
                     else if (g1 < g2) res = '2';
                     else res = 'X';
                 }
-
                 state[matchId] = { res, eq1, eq2, g1, g2 };
             }
 
@@ -1405,7 +1409,6 @@
                 const elToFocus = document.getElementById(activeId);
                 if (elToFocus) {
                     elToFocus.focus();
-                    // Restore caret pos roughly for numbers
                     if (elToFocus.type === 'number' || elToFocus.type === 'text') {
                         const val = elToFocus.value;
                         elToFocus.value = '';
@@ -1425,11 +1428,8 @@
             calcular();
         }
 
-
         function getHeadToHeadWinner(aId, bId) {
-            let ptsA = 0;
-            let ptsB = 0;
-
+            let ptsA = 0, ptsB = 0;
             jornadas.forEach((j, jIndex) => {
                 j.partidos.forEach((p, pIndex) => {
                     if ((p.eq1 === aId && p.eq2 === bId) || (p.eq1 === bId && p.eq2 === aId)) {
@@ -1445,7 +1445,6 @@
                             const matchId = `m-${jIndex}-${pIndex}`;
                             if (state[matchId]) res = state[matchId].res;
                         }
-
                         if (res) {
                             if (p.eq1 === aId) {
                                 if (res === '1') ptsA += 3;
@@ -1460,10 +1459,9 @@
                     }
                 });
             });
-
             if (ptsA > ptsB) return -1;
             if (ptsA < ptsB) return 1;
-            return 0; // empate en enfrentamiento directo
+            return 0;
         }
 
         function calcular() {
@@ -1472,10 +1470,8 @@
             Object.values(state).forEach(matchObj => {
                 if (!matchObj) return;
                 const { res, eq1, eq2, g1, g2 } = matchObj;
-
                 stats[eq1].pj++;
                 stats[eq2].pj++;
-
                 if (res === '1') {
                     stats[eq1].pt += 3;
                     stats[eq1].pg++; stats[eq2].pp++;
@@ -1486,11 +1482,9 @@
                     stats[eq2].pt += 3;
                     stats[eq2].pg++; stats[eq1].pp++;
                 }
-
                 let addG1 = g1 !== undefined ? g1 : (res === '1' ? 1 : 0);
                 let addG2 = g2 !== undefined ? g2 : (res === '2' ? 1 : 0);
                 if (res === 'X' && g1 === undefined) { addG1 = 0; addG2 = 0; }
-
                 stats[eq1].gf += addG1; stats[eq2].gc += addG1;
                 stats[eq2].gf += addG2; stats[eq1].gc += addG2;
             });
@@ -1513,33 +1507,26 @@
                         return (b.gf - b.gc) - (a.gf - a.gc);
                     });
                 } else if (group.length > 2) {
-                    group.sort((a, b) => {
-                        return (b.gf - b.gc) - (a.gf - a.gc);
-                    });
+                    group.sort((a, b) => (b.gf - b.gc) - (a.gf - a.gc));
                 }
                 ranking = ranking.concat(group);
             });
 
-            // Update Final4 bracket with latest ranking
             updateFinal4FromRanking(ranking);
 
             const tableBody = document.getElementById('ranking-body');
             tableBody.innerHTML = "";
             ranking.forEach((eq, i) => {
                 const isPos4 = i < 4 ? 'pos-top4' : '';
-
                 const totalMatches = eq.pg + eq.pe + eq.pp;
-
                 const pgPct = totalMatches ? Math.round(eq.pg / totalMatches * 100) : 0;
                 const pePct = totalMatches ? Math.round(eq.pe / totalMatches * 100) : 0;
                 const ppPct = totalMatches ? Math.round(eq.pp / totalMatches * 100) : 0;
-
                 const gfRat = totalMatches ? (eq.gf / totalMatches) : 0;
                 const gcRat = totalMatches ? (eq.gc / totalMatches) : 0;
-
                 const formatRatio = (r) => (r % 1 === 0 ? r : r.toFixed(1)) + ' gol/part.';
 
-                const row = `<tr class="${isPos4}">
+                tableBody.innerHTML += `<tr class="${isPos4}">
                 <td style="font-weight:600; color:${i < 4 ? '#10b981' : '#555'}">${i + 1}</td>
                 <td>
                     <div class="team-clasif-cell">
@@ -1556,67 +1543,46 @@
                 <td style="font-weight:600;">${eq.gc}<div style="font-size:9px; color:#888; font-weight:400;">${formatRatio(gcRat)}</div></td>
                 <td style="font-weight:600; font-size:13px;">${eq.gf - eq.gc > 0 ? '+' : ''}${eq.gf - eq.gc}</td>
             </tr>`;
-                tableBody.innerHTML += row;
             });
         }
 
-        // ─── FINAL 4 LOGIC ───────────────────────────────────────────
-        // Internal state for Final4 (winner picks, not scores)
-        let f4State = {
-            teams: null,   // { p1, p2, p3, p4, pos }
-            sf1: null,     // slot winner: 1 or 2 (null = no pick)
-            sf2: null,
-            final: null
-        };
+        // ─── FINAL 4 ─────────────────────────────────────────────────
+        let f4State = { teams: null, sf1: null, sf2: null, final: null };
 
         function updateFinal4FromRanking(ranking) {
             const top4 = ranking.slice(0, 4);
             const newTeams = {
-                p1: top4[0].id,
-                p2: top4[1].id,
-                p3: top4[2].id,
-                p4: top4[3].id,
+                p1: top4[0].id, p2: top4[1].id, p3: top4[2].id, p4: top4[3].id,
                 pos: { [top4[0].id]: 1, [top4[1].id]: 2, [top4[2].id]: 3, [top4[3].id]: 4 }
             };
-
-            // Reset picks if top-4 has changed
             if (!f4State.teams ||
                 f4State.teams.p1 !== newTeams.p1 || f4State.teams.p2 !== newTeams.p2 ||
                 f4State.teams.p3 !== newTeams.p3 || f4State.teams.p4 !== newTeams.p4) {
-                f4State.sf1 = null;
-                f4State.sf2 = null;
-                f4State.final = null;
+                f4State.sf1 = null; f4State.sf2 = null; f4State.final = null;
             }
-
             f4State.teams = newTeams;
-
             setTeamSlot('f4-sf1', 1, top4[0].id, '1º');
             setTeamSlot('f4-sf1', 2, top4[3].id, '4º');
             setTeamSlot('f4-sf2', 1, top4[1].id, '2º');
             setTeamSlot('f4-sf2', 2, top4[2].id, '3º');
-
             calcFinal4();
         }
 
         function setTeamSlot(matchId, slot, teamId, seed) {
-            const logo   = document.getElementById(`${matchId}-logo${slot}`);
-            const name   = document.getElementById(`${matchId}-name${slot}`);
+            const logo = document.getElementById(`${matchId}-logo${slot}`);
+            const name = document.getElementById(`${matchId}-name${slot}`);
             const seedEl = document.getElementById(`${matchId}-seed${slot}`);
-            if (logo)   { logo.src = getLogoSrc(teamId); logo.style.display = ''; }
-            if (name)   name.textContent = base[teamId] ? base[teamId].nombre : teamId;
+            if (logo) { logo.src = getLogoSrc(teamId); logo.style.display = ''; }
+            if (name) name.textContent = base[teamId] ? base[teamId].nombre : teamId;
             if (seedEl) seedEl.textContent = seed;
         }
 
-        // Called when user clicks a 🏆 button
         function pickWinner(match, slot) {
-            // Toggle: click same again → clear
             if (f4State[match] === slot) {
                 f4State[match] = null;
-                // If SF changed, reset final pick
                 if (match !== 'final') f4State.final = null;
             } else {
                 f4State[match] = slot;
-                // If SF changed, reset final pick
                 if (match !== 'final') f4State.final = null;
             }
             calcFinal4();
@@ -1625,23 +1591,18 @@
         function calcFinal4() {
             if (!f4State.teams) return;
             const t = f4State.teams;
-
-            // Resolve SF winners/losers from picks
             let sf1Winner = null, sf1Loser = null;
             if (f4State.sf1 === 1) { sf1Winner = t.p1; sf1Loser = t.p4; }
             if (f4State.sf1 === 2) { sf1Winner = t.p4; sf1Loser = t.p1; }
-
             let sf2Winner = null, sf2Loser = null;
             if (f4State.sf2 === 1) { sf2Winner = t.p2; sf2Loser = t.p3; }
             if (f4State.sf2 === 2) { sf2Winner = t.p3; sf2Loser = t.p2; }
 
-            // Style bracket team rows
             styleTeamResult('f4-sf1-eq1', sf1Winner === t.p1, sf1Loser === t.p1);
             styleTeamResult('f4-sf1-eq2', sf1Winner === t.p4, sf1Loser === t.p4);
             styleTeamResult('f4-sf2-eq1', sf2Winner === t.p2, sf2Loser === t.p2);
             styleTeamResult('f4-sf2-eq2', sf2Winner === t.p3, sf2Loser === t.p3);
 
-            // Style buttons
             styleBtnWinner('f4-sf1-btn1', f4State.sf1 === 1);
             styleBtnWinner('f4-sf1-btn2', f4State.sf1 === 2);
             styleBtnWinner('f4-sf2-btn1', f4State.sf2 === 1);
@@ -1649,34 +1610,21 @@
             styleBtnWinner('f4-final-btn1', f4State.final === 1);
             styleBtnWinner('f4-final-btn2', f4State.final === 2);
 
-            // Enable/disable final buttons depending on SF results
             const finBtn1 = document.getElementById('f4-final-btn1');
             const finBtn2 = document.getElementById('f4-final-btn2');
             if (finBtn1) finBtn1.disabled = !sf1Winner;
             if (finBtn2) finBtn2.disabled = !sf2Winner;
 
-            // Update Final slots
             const fn1El = document.getElementById('f4-final-name1');
             const fn2El = document.getElementById('f4-final-name2');
             const fl1El = document.getElementById('f4-final-logo1');
             const fl2El = document.getElementById('f4-final-logo2');
 
-            if (sf1Winner) {
-                fn1El.textContent = base[sf1Winner].nombre;
-                fl1El.src = getLogoSrc(sf1Winner); fl1El.style.display = '';
-            } else {
-                fn1El.textContent = 'Ganador SF1';
-                fl1El.style.display = 'none';
-            }
-            if (sf2Winner) {
-                fn2El.textContent = base[sf2Winner].nombre;
-                fl2El.src = getLogoSrc(sf2Winner); fl2El.style.display = '';
-            } else {
-                fn2El.textContent = 'Ganador SF2';
-                fl2El.style.display = 'none';
-            }
+            if (sf1Winner) { fn1El.textContent = base[sf1Winner].nombre; fl1El.src = getLogoSrc(sf1Winner); fl1El.style.display = ''; }
+            else { fn1El.textContent = 'Ganador SF1'; fl1El.style.display = 'none'; }
+            if (sf2Winner) { fn2El.textContent = base[sf2Winner].nombre; fl2El.src = getLogoSrc(sf2Winner); fl2El.style.display = ''; }
+            else { fn2El.textContent = 'Ganador SF2'; fl2El.style.display = 'none'; }
 
-            // Final winner
             let finalWinner = null, finalLoser = null;
             if (sf1Winner && sf2Winner) {
                 if (f4State.final === 1) { finalWinner = sf1Winner; finalLoser = sf2Winner; }
@@ -1686,10 +1634,9 @@
             styleTeamResult('f4-final-eq1', finalWinner === sf1Winner && finalWinner !== null, finalLoser === sf1Winner && finalLoser !== null);
             styleTeamResult('f4-final-eq2', finalWinner === sf2Winner && finalWinner !== null, finalLoser === sf2Winner && finalLoser !== null);
 
-            // 3rd place: best-ranked loser
             const losers = [sf1Loser, sf2Loser].filter(Boolean);
             const thirdBox = document.getElementById('f4-third-box');
-            const podium   = document.getElementById('f4-podium');
+            const podium = document.getElementById('f4-podium');
 
             let thirdTeam = null;
             if (losers.length >= 1) {
@@ -1705,17 +1652,13 @@
                 thirdBox.style.display = 'none';
             }
 
-            // Podium
             if (finalWinner && finalLoser && thirdTeam) {
                 const setP = (n, id) => {
                     const logo = document.getElementById(`pod-${n}-logo`);
-                    logo.src = getLogoSrc(id);
-                    logo.style.display = '';
+                    logo.src = getLogoSrc(id); logo.style.display = '';
                     document.getElementById(`pod-${n}-name`).textContent = base[id].nombre;
                 };
-                setP(1, finalWinner);
-                setP(2, finalLoser);
-                setP(3, thirdTeam);
+                setP(1, finalWinner); setP(2, finalLoser); setP(3, thirdTeam);
                 podium.style.display = 'block';
             } else {
                 podium.style.display = 'none';
@@ -1733,12 +1676,9 @@
             if (!el) return;
             el.classList.remove('winner', 'loser');
             if (isWinner) el.classList.add('winner');
-            if (isLoser)  el.classList.add('loser');
+            if (isLoser) el.classList.add('loser');
         }
-        // ─────────────────────────────────────────────────────────────
 
-        // Init
-        renderPartidos();
         function closeModal() {
             document.getElementById('matches-modal').classList.remove('active');
         }
@@ -1746,7 +1686,6 @@
         function showTeamMatches(teamId) {
             const teamName = base[teamId].nombre;
             document.getElementById('modal-team-title').innerText = "Listado de partidos - " + teamName;
-
             const tbody = document.getElementById('modal-matches-body');
             tbody.innerHTML = "";
 
@@ -1755,49 +1694,34 @@
                     if (p.eq1 === teamId || p.eq2 === teamId) {
                         const eq1Info = base[p.eq1];
                         const eq2Info = base[p.eq2];
-
                         let displayScore = "-";
                         if (p.score) {
                             displayScore = p.score;
                         } else {
                             const matchId = `m-${jIndex}-${pIndex}`;
-                            if (state[matchId]) {
-                                displayScore = `[ ${state[matchId].res} ]`;
-                            }
+                            if (state[matchId]) displayScore = `[ ${state[matchId].res} ]`;
                         }
-
                         const eq1Name = p.eq1 === teamId ? `<strong>${eq1Info.nombre}</strong>` : eq1Info.nombre;
                         const eq2Name = p.eq2 === teamId ? `<strong>${eq2Info.nombre}</strong>` : eq2Info.nombre;
-
                         const eq1LogoHTML = `<img src="${getLogoSrc(p.eq1)}" onerror="this.style.display='none'">`;
                         const eq2LogoHTML = `<img src="${getLogoSrc(p.eq2)}" onerror="this.style.display='none'">`;
-
                         const tr = document.createElement('tr');
                         tr.innerHTML = `
                             <td style="white-space:nowrap;font-size:11px;">${j.titulo.replace('RESULTADOS ARRASTRADOS (1\u00aa FASE)', '1\u00aa F.').replace('JORNADA ', '')}</td>
                             <td style="white-space:nowrap;font-size:11px;">${p.date || j.fecha}</td>
-                            <td>
-                                <div class="modal-team-cell" style="justify-content:flex-end;">
-                                    ${eq1LogoHTML}
-                                    <span>${eq1Name}</span>
-                                </div>
-                            </td>
+                            <td><div class="modal-team-cell" style="justify-content:flex-end;">${eq1LogoHTML}<span>${eq1Name}</span></div></td>
                             <td style="font-weight:700;font-size:14px;background:#f9f9f9;white-space:nowrap;padding:8px 10px;">${displayScore}</td>
-                            <td>
-                                <div class="modal-team-cell" style="justify-content:flex-start;">
-                                    ${eq2LogoHTML}
-                                    <span>${eq2Name}</span>
-                                </div>
-                            </td>
+                            <td><div class="modal-team-cell" style="justify-content:flex-start;">${eq2LogoHTML}<span>${eq2Name}</span></div></td>
                         `;
                         tbody.appendChild(tr);
                     }
                 });
             });
-
             document.getElementById('matches-modal').classList.add('active');
         }
 
+        // Init
+        renderPartidos();
         calcular();
     </script>
 
@@ -1818,8 +1742,7 @@
                             <th>VISITANTE</th>
                         </tr>
                     </thead>
-                    <tbody id="modal-matches-body">
-                    </tbody>
+                    <tbody id="modal-matches-body"></tbody>
                 </table>
             </div>
         </div>
